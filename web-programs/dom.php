@@ -6,3 +6,4 @@ $html = file_get_html('http://www.google.com/');
 foreach($html->find('img') as $element) 
        echo $element->src . '<br>';
 
+phpinfo();
