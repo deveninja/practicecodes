@@ -7,10 +7,26 @@
     <title>Tasks Page</title>
 </head>
 <body>
-    <pre>
-        <?php print_r($task); ?>
+    
+<?php foreach($tasks as $task) : ?>
+    <ul>
+        <li>
+            <?php if ($task->completed) : ?>
+                <strike>
+                    <?php echo $task->title; ?><br />
+                    <?php echo $task->desc; ?><br />
+                    <?php echo $task->duedate; ?><br />
+                </strike>
+            <?php else: ?>   
+                    <?php echo $task->title; ?><br />
+                    <?php echo $task->desc; ?><br />
+                    <?php echo $task->duedate; ?><br />
+            <?php endif; ?>
+        </li>
+    </ul>
+<?php endforeach; ?>
         
-    </pre>
-    <span style="font-size:500px; color:red; text-shadow: 5px 5px 10px rgba(3,3,3,0.5);">&#9775</span>
+    
+   
 </body>
 </html>

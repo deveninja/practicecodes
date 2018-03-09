@@ -1,5 +1,6 @@
 <?php
 
+require 'functions.php';
 
 try {
 
@@ -12,14 +13,14 @@ try {
 }
 
 
-$query = $pdo->prepare('SELECT * FROM wp_3_project_tasks');
+$query = $pdo->prepare('SELECT * FROM wp_3_project_tasks LIMIT 20');
 
 $query->execute();
 
-$tasks = $query->fetchAll(PDO::FETCH_OBJ);
+$results = $query->fetchAll(PDO::FETCH_OBJ);
 
 
 
 
 
-require 'program.view.php';
+require 'tasks.view.php';
